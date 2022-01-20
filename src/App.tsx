@@ -1,3 +1,4 @@
+import { jsx, css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 import { Attributes, findChartsByLevel, findChartsByVersion, Version } from './data/data';
@@ -8,7 +9,22 @@ const ButtonContainer = styled.div({
 })
 
 const Button = styled.button({
-  
+  ':focus': {
+    cursor: 'pointer',
+  },
+  ':hover': {
+    cursor: 'pointer',
+    backgroundColor: 'lightgray',
+  },
+  transition: 'background-color .5s',
+  fontSize: 16,
+  border: '1px solid lightgray',
+  borderRadius: 5,
+  marginRight: 5,
+  paddingTop: 5,
+  paddingBottom: 5,
+  paddingLeft: 10,
+  paddingRight: 10,
 })
 
 const App: React.FC = () => {
@@ -30,11 +46,11 @@ const App: React.FC = () => {
     <div>
       <h3>Version</h3>
       <ButtonContainer>
-        {Object.values(Version).filter(value => typeof value == 'string').map(value => <Button onClick={(e) => onClickVersion(value)}>{value}</Button>)}
+        {Object.values(Version).filter(value => typeof value == 'string').map((value, index) => <Button key={`version_button_${index}`} onClick={(e) => onClickVersion(value)}>{value}</Button>)}
       </ButtonContainer>
       <h3>Level</h3>
       <ButtonContainer>
-        {[...Array(12)].map((_, index) => <Button onClick={(e) => onClickLevel(index+1)}>{index+1}</Button>)}
+        {[...Array(12)].map((_, index) => <Button key={`level_button_${index}`} onClick={(e) => onClickLevel(index+1)}>{index+1}</Button>)}
       </ButtonContainer>
       {chart && <div>
         <h4>TITLE</h4>
