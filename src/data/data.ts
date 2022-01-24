@@ -38,7 +38,7 @@ export enum Version {
   PENDUAL = 'PEN',
   COPULA = 'cop',
   SINOBUZ = 'SINO',
-  CANNON_BALLERS = 'CB',
+  CANNON_BALLERS = 'CAN',
   ROOTAGE = 'Root',
   HEROIC_VERSE = 'HERO',
   BISTROVER = 'BIS',

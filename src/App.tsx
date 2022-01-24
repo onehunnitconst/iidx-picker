@@ -235,7 +235,7 @@ const App: React.FC = () => {
       </HeaderContainer>
       <ChartContainer>
         {chart ? <div>
-          <SubText>{chart.genre}</SubText>
+          <SubText>{chart.version} / {chart.genre}</SubText>
           <TitleText>{chart.title}</TitleText>
           <InfoText>{chart.artist}</InfoText>
           <InfoText><b>{chart.chart}</b> Lv.{chart.level} {chart.notes} NOTES</InfoText>
@@ -297,7 +297,7 @@ const App: React.FC = () => {
       </ButtonContainerMobile>}
       <FooterContainer>
         <p>
-          <b>❗️현재는 싱글 플레이 차트만 정상 작동합니다.</b> <br />
+          <b>❗️현재는 싱글 플레이 차트만 지원합니다.</b> <br />
           repository: GitHub <a href='https://github.com/onehunnitconst/iidx-picker'>onehunnitconst/iidx-picker</a> <br />
           contact: Twitter <a href='https://twitter.com/thisiswalewalu'>@thisiswalewalu</a>
         </p>
